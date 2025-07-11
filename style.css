@@ -29,9 +29,12 @@
         Product 2 Link: https://plus.unsplash.com/premium_photo-1676914336000-f8b2f9edd56a?q=80&w=784&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
         Product 3 Link: https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
     */
+    /*Gap*/
+    --spacing:10rem;
 }
 html{
     /* font-size:10px; */
+    
 }
 #wrapper{
     width:100vw;
@@ -54,35 +57,30 @@ html{
 }
 .navigation-bar{
     width:100%;
-    height:15%;
     display:flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items:center;
-    padding:1rem 4rem;
+    padding:1.4rem 4rem;
     background-color: #FAF4EF;
     font-family: var(--font-secondary);
     position:absolute;
     top:0;
-}
-.nav-container{
-    width:100%;
-    height:30vh;
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    padding:1rem 4rem;
-    font-family: var(--font-secondary);
 }
 .navigation-bar > h2, .nav-container > h2{
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-weight: 700;
     font-size:1.8rem;
+    user-select:none;
 }
 .navlinks, .navlinks-footer{
     display:flex;
     list-style:none;
-    justify-content: space-evenly;
+    justify-content: center;
+    user-select:none;
+    flex-wrap: wrap;
+    gap:1rem;
 }
 .navlinks a{
     text-decoration: none;
@@ -96,6 +94,7 @@ html{
 .navlinks a:hover{
     background-color:var(--color-secondary);
     color:var(--color-primary);
+    user-select:none;
 }
 .navlinks-footer a{
     text-decoration: none;
@@ -105,6 +104,7 @@ html{
     letter-spacing: 0.05rem; 
     padding: 0.2rem 1rem;
     transition: all 0.4s ease-out;
+    user-select:none;
 }
 .navlinks-footer a:hover{
     color:var(--color-secondary);
@@ -125,6 +125,7 @@ html{
     left:10%;
     color: var(--color-primary);
     font-family: var(--heading-font);
+    user-select:none;
 }
 .banner-text > h1 > div{
     font-size: 5rem;
@@ -168,16 +169,19 @@ html{
 .products{
     margin: 50px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap:wrap;
+    align-content: center;
+    gap:6rem;
 }
 .product-card{
-    width:25%;
-    height:60vh;
+    width:20rem;
+    height:25rem;
     /* border: 1px solid black; */
 }
 .product-card > img{
     width: 100%;
-    height:80%;
+    height:70%;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 5px 5px 20px var(--color-shadow);
@@ -265,13 +269,13 @@ html{
 .bestseller-product{
     padding:3rem 2rem;
     width: 100%;
-    height: 100vh;
     background-color: var(--color-primary); 
 }
 .bestseller-product h2{
     width: 100%;
     height: 18%;
     text-align: center;
+    margin: 2rem 0rem;
 }
 .section1-product h2{
     color:var(--color-section1);
@@ -283,10 +287,13 @@ html{
     color:var(--color-section3);
 }
 .bestseller-product-content{
+    margin: 3rem 0rem;
     width: 100%;
     height: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap:4rem;
+    flex-wrap: wrap-reverse;
 }
 .bestseller-product-description{
     width:65%;
@@ -296,8 +303,8 @@ html{
     margin: 15px 0px;
 }
 .bestseller-product-image{
-    width:30%;
-    height:80%;
+    width:22rem;
+    height:19.5rem;
     border-radius: 15px;
     object-fit: cover;
 }
@@ -310,16 +317,17 @@ html{
 }
 .footer{
     width:100%;
-    height:60vh;
     background-color: #FAF4EF;
 }
-.button-social-media-container{
+.nav-container, .button-social-media-container{
     width:100%;
-    height:30vh;
-    display: flex;
+    display:flex;
     justify-content: space-between;
-    align-items: center;
-    padding:1rem 4rem;
+    align-items:center;
+    flex-wrap: wrap;
+    padding:4.5rem 4rem;
+    gap:2rem;
+    font-family: var(--font-secondary);
 }
 .button-social-media-container .btn{
     border-radius: 2rem;
@@ -334,4 +342,34 @@ html{
 .social-media:hover{
     color:#000080;
     font-size: 2.2rem;
+}
+@media (max-width:780px){
+    .background{
+        background-size:cover;
+    }
+    .banner-text > h1 > div{
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 0.1rem;
+        line-height: 4rem;
+    }
+    .banner-text > h2{
+        font-weight: 400;
+        font-family: var(--font-secondary);
+        letter-spacing: 0.1rem;
+        line-height: 5rem;
+    }
+    .navigation-bar > h2, .nav-container > h2{
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-weight: 700;
+        font-size:1.4rem;
+        user-select:none;
+    }
+    .main-container-heading{
+        font-size: 1.5rem;
+        font-weight:400;
+        font-family: var(--font-heading);
+        letter-spacing: 0.1rem;
+    }
 }
